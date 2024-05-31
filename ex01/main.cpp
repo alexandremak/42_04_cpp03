@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 03:04:54 by amak              #+#    #+#             */
-/*   Updated: 2024/05/31 20:13:31 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 20:16:44 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,14 @@ int main() {
 
 	charlie.attack(delta.getName());
 	charlie.printEnergy();
-	
+		
 	delta.takeDamage(charlie.getAD());
 	delta.printHealth();
 	delta.beRepaired(10);
 	delta.printHealth();
 	delta.printEnergy();
 
+	charlie.guardGate();
 	delta.takeDamage(80);
 	delta.printHealth();
 
@@ -45,6 +46,7 @@ int main() {
 
 	delta.beRepaired(10);
 	delta.takeDamage(1000);
+	delta.guardGate();
 	delta.printHealth();
 	delta.printEnergy();
 }

@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 03:13:11 by amak              #+#    #+#             */
-/*   Updated: 2024/05/31 19:54:54 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 20:17:27 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void ScavTrap::guardGate() {
 	if (this->_hp == 0)
 		std::cout << "ScavTrap " << this->_name << " is dead! "
 		 	"Cannot activate Gate keeper mode!"  << std::endl;
+	else
 	std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode!"
 		<< std::endl;
 }

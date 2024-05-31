@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:11:24 by amak              #+#    #+#             */
-/*   Updated: 2024/05/31 19:04:17 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 19:10:14 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ unsigned int	ClapTrap::getAD() const {
 	return (this->_ad);
 }
 
-void ClapTrap::attack(const std::string& target) {
+void	ClapTrap::attack(const std::string& target) {
 	std::cout << RED << "[CLAPTrap]: attack called" << RESET << std::endl;
 	if (this->_hp == 0)
 		std::cout << "ClapTrap " << this->_name << " is dead! "
@@ -76,7 +76,7 @@ void ClapTrap::attack(const std::string& target) {
 	}
 }
 
-void ClapTrap::takeDamage(unsigned int amount) {
+void 	ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << RED << "[CLAPTrap]: takeDamage called" << RESET << std::endl;
 	std::cout << "ClapTrap " << this->_name << " takes " << amount
 		<< " points of damage!" << std::endl;
@@ -88,7 +88,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		this->_hp -= amount;		
 }
 
-void ClapTrap::beRepaired(unsigned int amount) {
+void 	ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << RED << "[CLAPTrap]: beRepaired called" << RESET << std::endl;
 	if (this->_hp == 0)
 		std::cout << "ClapTrap " << this->_name << " is dead! "

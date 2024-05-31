@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:11:24 by amak              #+#    #+#             */
-/*   Updated: 2024/05/31 19:10:14 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 19:18:14 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,11 @@ void	ClapTrap::printHealth() const {
 }
 
 void	ClapTrap::printEnergy() const {
-	std::cout << this->_name << " has " << this->_ep  << " energy points!"
+	std::cout << this->_name << " has " << this->_ep << " energy points!"
+		<< std::endl; 	
+}
+
+void	ClapTrap::printDamage() const {
+	std::cout << this->_name << " has " << this->_ad << " attack damage points!"
 		<< std::endl; 	
 }

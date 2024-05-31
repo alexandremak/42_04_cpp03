@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 00:20:01 by amak              #+#    #+#             */
-/*   Updated: 2024/05/31 19:04:09 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 19:18:35 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ class ClapTrap {
 
 		void	printHealth() const;
 		void	printEnergy() const;
+		void	printDamage() const;
 };
 
 #endif

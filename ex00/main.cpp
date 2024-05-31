@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 00:34:13 by amak              #+#    #+#             */
-/*   Updated: 2024/05/30 02:49:30 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 19:06:53 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,22 @@ int main() {
 	Beta = ClapTrap("BETA");
 	
 	Alpha.attack(Beta.getName());
-	std::cout << Alpha.getName() << " has " << Alpha.getEP()
-		<< " energy points!" << std::endl; 
+	Alpha.printEnergy();
 	
 	Beta.takeDamage(Alpha.getAD());
 	Beta.beRepaired(10);
-	std::cout << Beta.getName() << " has " << Beta.getHP()
-		<< " health points!" << std::endl; 
-	std::cout << Beta.getName() << " has " << Beta.getEP()
-		<< " energy points!" << std::endl; 
+	Beta.printHealth();
+	Beta.printEnergy();
 
 	Beta.takeDamage(19);
-	std::cout << Beta.getName() << " has " << Beta.getHP()
-		<< " health points!" << std::endl; 
+	Beta.printHealth();
 
 	Beta.takeDamage(10);
-	std::cout << Beta.getName() << " has " << Beta.getHP()
-		<< " health points!" << std::endl; 
+	Beta.printHealth();
 
 	Beta.beRepaired(10);
-	std::cout << Beta.getName() << " has " << Beta.getHP()
-		<< " health points!" << std::endl;
-	std::cout << Beta.getName() << " has " << Beta.getEP()
-		<< " energy points!" << std::endl; 
+	Beta.printHealth();
+	Beta.printEnergy();
+
+	Beta.attack(Alpha.getName());
 }

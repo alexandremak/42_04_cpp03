@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 00:20:01 by amak              #+#    #+#             */
-/*   Updated: 2024/05/30 02:43:17 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 19:04:09 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,12 @@ class ClapTrap {
 		unsigned int	getEP() const;
 		unsigned int	getAD() const;
 
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+
+		void	printHealth() const;
+		void	printEnergy() const;
 };
 
 #endif

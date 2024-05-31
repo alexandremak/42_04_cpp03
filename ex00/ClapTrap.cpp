@@ -6,13 +6,13 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:11:24 by amak              #+#    #+#             */
-/*   Updated: 2024/05/30 02:47:53 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 19:04:17 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() {
+ClapTrap::ClapTrap() : _name("Untitled"), _hp(INIT_HP), _ep(INIT_EP), _ad(0) {
 	std::cout << RED << "[CLAPTrap]: Default constructed called" << RESET
 		<< std::endl;
 }
@@ -63,7 +63,10 @@ unsigned int	ClapTrap::getAD() const {
 
 void ClapTrap::attack(const std::string& target) {
 	std::cout << RED << "[CLAPTrap]: attack called" << RESET << std::endl;
-	if (this->_ep == 0)
+	if (this->_hp == 0)
+		std::cout << "ClapTrap " << this->_name << " is dead! "
+			"Cannot attack!"  << std::endl;
+	else if (this->_ep == 0)
 		 std::cout << "ClapTrap " << this->_name << "has no energy points!"
 		 	<< std::endl;
 	else {
@@ -99,4 +102,14 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "ClapTrap " << this->_name << " was repaired " << amount
 		<< " points of heath!" << std::endl;
 	}
+}
+
+void	ClapTrap::printHealth() const {
+	std::cout << this->_name << " has " << this->_hp << " health points!"
+		<< std::endl; 
+}
+
+void	ClapTrap::printEnergy() const {
+	std::cout << this->_name << " has " << this->_ep  << " energy points!"
+		<< std::endl; 	
 }

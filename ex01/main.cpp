@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 03:04:54 by amak              #+#    #+#             */
-/*   Updated: 2024/05/31 19:23:36 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 20:13:31 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ int main() {
 	delta.printHealth();
 	delta.printEnergy();
 
-	delta.takeDamage(19);
+	delta.takeDamage(80);
 	delta.printHealth();
 
 	delta.takeDamage(10);
 	delta.printHealth();
 
 	delta.beRepaired(10);
+	delta.takeDamage(1000);
 	delta.printHealth();
 	delta.printEnergy();
 }

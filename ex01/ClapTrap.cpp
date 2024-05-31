@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:11:24 by amak              #+#    #+#             */
-/*   Updated: 2024/05/30 03:27:48 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 19:20:20 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ ClapTrap::ClapTrap() : _name("Untitled"), _hp(INIT_HP), _ep(INIT_EP), _ad(0) {
 		<< std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hp(INIT_HP), _ep(INIT_EP), 
-	_ad(0) {
+ClapTrap::ClapTrap(std::string name) : _hp(INIT_HP), _ep(INIT_EP), _ad(0) {
 	std::cout << RED << "[CLAPTrap]: Name constructed called" << RESET
 		<< std::endl;
+	this->_name = name;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &otherClapTrap) {
@@ -30,8 +30,8 @@ ClapTrap::ClapTrap(const ClapTrap &otherClapTrap) {
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &otherClapTrap) {
-	std::cout << RED << "[CLAPTrap]: Copy assignment constructed called"
-		<< RESET << std::endl;
+	std::cout << RED << "[CLAPTrap]: Copy assignment constructed called" << RESET 
+		<< std::endl;
 	if (this != &otherClapTrap) {
 		this->_name = otherClapTrap._name;
 		this->_hp = otherClapTrap._hp;
@@ -61,9 +61,12 @@ unsigned int	ClapTrap::getAD() const {
 	return (this->_ad);
 }
 
-void ClapTrap::attack(const std::string& target) {
+void	ClapTrap::attack(const std::string& target) {
 	std::cout << RED << "[CLAPTrap]: attack called" << RESET << std::endl;
-	if (this->_ep == 0)
+	if (this->_hp == 0)
+		std::cout << "ClapTrap " << this->_name << " is dead! "
+			"Cannot attack!"  << std::endl;
+	else if (this->_ep == 0)
 		 std::cout << "ClapTrap " << this->_name << "has no energy points!"
 		 	<< std::endl;
 	else {
@@ -73,7 +76,7 @@ void ClapTrap::attack(const std::string& target) {
 	}
 }
 
-void ClapTrap::takeDamage(unsigned int amount) {
+void 	ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << RED << "[CLAPTrap]: takeDamage called" << RESET << std::endl;
 	std::cout << "ClapTrap " << this->_name << " takes " << amount
 		<< " points of damage!" << std::endl;
@@ -85,7 +88,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		this->_hp -= amount;		
 }
 
-void ClapTrap::beRepaired(unsigned int amount) {
+void 	ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << RED << "[CLAPTrap]: beRepaired called" << RESET << std::endl;
 	if (this->_hp == 0)
 		std::cout << "ClapTrap " << this->_name << " is dead! "
@@ -99,4 +102,19 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "ClapTrap " << this->_name << " was repaired " << amount
 		<< " points of heath!" << std::endl;
 	}
+}
+
+void	ClapTrap::printHealth() const {
+	std::cout << this->_name << " has " << this->_hp << " health points!"
+		<< std::endl; 
+}
+
+void	ClapTrap::printEnergy() const {
+	std::cout << this->_name << " has " << this->_ep  << " energy points!"
+		<< std::endl; 	
+}
+
+void	ClapTrap::printDamage() const {
+	std::cout << this->_name << " has " << this->_ad << " attack damage points!"
+		<< std::endl; 	
 }

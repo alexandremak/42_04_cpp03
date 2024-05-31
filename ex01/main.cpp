@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 03:04:54 by amak              #+#    #+#             */
-/*   Updated: 2024/05/30 03:43:03 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 19:23:36 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,30 +18,32 @@ int main() {
 
 	delta = ScavTrap("DELTA");
 
+	std::cout << std::endl;
+	charlie.printHealth();
+	charlie.printEnergy();
+	charlie.printDamage();
+	std::cout << "------------" << std::endl;
+	delta.printHealth();
+	delta.printEnergy();
+	delta.printDamage();
+	std::cout << std::endl;
+
 	charlie.attack(delta.getName());
-	std::cout << charlie.getName() << " has " << charlie.getEP()
-		<< " energy points!" << std::endl; 
+	charlie.printEnergy();
 	
 	delta.takeDamage(charlie.getAD());
-	std::cout << delta.getName() << " has " << delta.getHP()
-		<< " health points!" << std::endl; 
+	delta.printHealth();
 	delta.beRepaired(10);
-	std::cout << delta.getName() << " has " << delta.getHP()
-		<< " health points!" << std::endl; 
-	std::cout << delta.getName() << " has " << delta.getEP()
-		<< " energy points!" << std::endl; 
+	delta.printHealth();
+	delta.printEnergy();
 
 	delta.takeDamage(19);
-	std::cout << delta.getName() << " has " << delta.getHP()
-		<< " health points!" << std::endl; 
+	delta.printHealth();
 
 	delta.takeDamage(10);
-	std::cout << delta.getName() << " has " << delta.getHP()
-		<< " health points!" << std::endl; 
+	delta.printHealth();
 
 	delta.beRepaired(10);
-	std::cout << delta.getName() << " has " << delta.getHP()
-		<< " health points!" << std::endl;
-	std::cout << delta.getName() << " has " << delta.getEP()
-		<< " energy points!" << std::endl; 
+	delta.printHealth();
+	delta.printEnergy();
 }

@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 03:13:11 by amak              #+#    #+#             */
-/*   Updated: 2024/05/30 03:42:19 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 19:54:54 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,11 @@ ScavTrap::~ScavTrap() {
 
 void ScavTrap::attack(const std::string& target) {
 	std::cout << GREEN << "[SCAVTrap]: attack called" << RESET << std::endl;
-	if (this->_ep == 0)
-		 std::cout << "ScavTrap " << this->_name << "has no energy points!"
+	if (this->_hp == 0)
+		std::cout << "ScavTrap " << this->_name << " is dead! "
+		 	"Cannot attack!"  << std::endl;
+	else if (this->_ep == 0)
+		std::cout << "ScavTrap " << this->_name << "has no energy points!"
 		 	<< std::endl;
 	else {
 		this->_ep--;
@@ -64,6 +67,9 @@ void ScavTrap::attack(const std::string& target) {
 
 void ScavTrap::guardGate() {
 	std::cout << GREEN << "[ScavTrap]: guardGate called" << RESET << std::endl;
+	if (this->_hp == 0)
+		std::cout << "ScavTrap " << this->_name << " is dead! "
+		 	"Cannot activate Gate keeper mode!"  << std::endl;
 	std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode!"
 		<< std::endl;
 }

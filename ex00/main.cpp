@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 00:34:13 by amak              #+#    #+#             */
-/*   Updated: 2024/05/31 19:06:53 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 20:04:03 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ int main() {
 	Beta.printEnergy();
 
 	Beta.attack(Alpha.getName());
+	Alpha.attack(Beta.getName());
+	Beta.takeDamage(Alpha.getAD());
 }

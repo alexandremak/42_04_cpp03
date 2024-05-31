@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 23:11:24 by amak              #+#    #+#             */
-/*   Updated: 2024/05/31 19:18:14 by amak             ###   ########.fr       */
+/*   Updated: 2024/05/31 20:02:57 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,14 +78,19 @@ void	ClapTrap::attack(const std::string& target) {
 
 void 	ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << RED << "[CLAPTrap]: takeDamage called" << RESET << std::endl;
-	std::cout << "ClapTrap " << this->_name << " takes " << amount
-		<< " points of damage!" << std::endl;
-	if (this->_hp <= amount) {
-		this->_hp = 0;
-		std::cout << "ClapTrap " << this->_name << " has died!" << std::endl;
+	if (this->_hp == 0)
+		std::cout << "ClapTrap " << this->_name << " cannot take damage "
+			"because it's already dead!" << std::endl;
+	else {
+		std::cout << "ClapTrap " << this->_name << " takes " << amount
+			<< " points of damage!" << std::endl;
+		if (this->_hp <= amount) {
+			this->_hp = 0;
+			std::cout << "ClapTrap " << this->_name << " has died!" << std::endl;
+		}
+		else
+			this->_hp -= amount;
 	}
-	else
-		this->_hp -= amount;		
 }
 
 void 	ClapTrap::beRepaired(unsigned int amount) {

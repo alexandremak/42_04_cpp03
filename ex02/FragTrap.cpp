@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 19:29:50 by amak              #+#    #+#             */
-/*   Updated: 2024/05/31 20:24:10 by amak             ###   ########.fr       */
+/*   Updated: 2024/06/01 00:24:09 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void	FragTrap::highFivesGuys(void) {
 		std::cout << "FragTrap " << this->_name << " is dead! "
 		 	"Cannot give hive five!"  << std::endl;
 	else
-		std::cout << "FragTrap " << this->_name << " puts his hand to give a "
+		std::cout << "FragTrap " << this->_name << " puts his hand up to give a "
 		"high five!" << std::endl;
 }

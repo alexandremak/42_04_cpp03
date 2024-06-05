@@ -6,7 +6,7 @@
 /*   By: amak <amak@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 00:20:01 by amak              #+#    #+#             */
-/*   Updated: 2024/05/31 19:20:33 by amak             ###   ########.fr       */
+/*   Updated: 2024/06/05 02:44:26 by amak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class ClapTrap {
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &otherClapTrap);
 		ClapTrap &operator=(const ClapTrap &otherClapTrap);
-		~ClapTrap();
+		virtual ~ClapTrap();
 
 		std::string		getName() const;
 		unsigned int	getHP() const;
